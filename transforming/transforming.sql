@@ -49,5 +49,5 @@ create table readmission_aggregate as select provider_id, avg(score) as avg_scor
 --drop table survey_response_transformed, if exists
 drop table survey_response_transformed;
 
--- create survey_respons_transformed
+-- create survey_response_transformed
 create table survey_response_transformed as select provider_id, (hcahps_score + hcahps_consistency_score) as total_score from survey_responses;
