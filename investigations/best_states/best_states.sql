@@ -1,0 +1,2 @@
+-- select average score 
+select state, count(state), round(avg(avg_score),2), round(avg(normalized_score),2) as avg_normalized_score from hospitals_aggregate group by state order by avg_normalized_score desc;

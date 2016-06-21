@@ -1,0 +1,14 @@
+Are average scores for hospital quality or procedural variability correlated with patient survey responses? 
+
+The Patient Experience of Care Domain Score (0 – 100 points) is the sum of the HCAHPS Base Score (0 – 80 points) and HCAHPS Consistency Score (0 – 20 points). 
+
+A correlation between total_score (patient response) and normalized hosptial effective care score has a Pearson Correlation of -0.49. 
+
+Below is how pearson correlation interpretation. 
+
+•  1 – highly positively correlated
+• -1 – highly negatively correlated
+•  0 – No linear relationship
+
+Conculsion: A negative score means that there is negative correlation between patient experience score and hospital effective care values. It could be that survey score as a whole is not 
+valid for correlating with hosptial's effective care. Further research is needed to look at survey data and may have to isolate some of the questions that are not relevant and rerun the correlation.

@@ -1,0 +1,65 @@
+What states are models of high-quality care? 
+
+Conclusion: Based on the normalized score (sum of score/41 measures), listed below are states that high quality care. 
+Number of hospitals participating in data collection is very different for each state. We will need more information
+to asses quality care for state. For example, for DE there are only 7 providers. It will be incorrect to compare
+states with differnet number of participating providers.
+
+State	#of 		Average		Normalized
+	hospitals	Score		Score
+NJ      65      	75.84   	71.5
+DE      7       	80.01   	69.08
+CT      31      	68.95   	64.05
+DC      9       	71.65   	62.91
+MA      64      	66.28   	62.15
+FL      186     	65.52   	61.03
+RI      12      	68.21   	60.99
+VA      83      	64.71   	59.93
+MD      48      	63.67   	59.69
+NY      180     	63.91   	58.92
+CA      340     	64.69   	58.53
+NC      110     	59.37   	54.86
+PA      174     	58.67   	54.45
+SC      63      	57.1    	52.75
+OH      166     	55.86   	52.05
+GA      132     	52.89   	49.32
+IL      182     	52.83   	49.09
+MI      137     	51.85   	48.36
+AL      91      	50.4    	47.32
+IN      124     	49.78   	46.75
+AZ      80      	50.48   	46.15
+ME      34      	50.22   	45.99
+TN      111     	49.82   	45.92
+OR      61      	50.48   	45.78
+NH      26      	49.1    	45.47
+HI      18      	48.89   	45.45
+VI      2       	51.62   	44.94
+NV      35      	48.55   	44.84
+MO      109     	48.88   	44.21
+WI      127     	45.5    	41.84
+KY      95      	44.7    	41.52
+WA      92      	44.46   	41.26
+TX      375     	44.28   	41.05
+WV      52      	46.8    	40.85
+NM      42      	44.26   	40.31
+UT      46      	41.78   	38.7
+CO      80      	42.21   	38.56
+LA      118     	39.87   	37.28
+VT      15      	43.99   	36.11
+AR      77      	38.83   	35.26
+MN      132     	32.85   	30.76
+OK      127     	33.23   	30.52
+PR      50      	42.39   	29.55
+MS      98      	31.29   	28.77
+GU      1       	25.85   	25.22
+WY      28      	28.75   	25.22
+AK      21      	26.4    	24.67
+IA      118     	26.33   	23.89
+ID      42      	26.11   	22.91
+KS      134     	23.44   	21.43
+NE      90      	20.47   	18.98
+MT      58      	21.11   	18.45
+SD      54      	19.06   	16.09
+ND      45      	15.99   	13.98
+AS      1       	0.0     	0.0
+MP      1       	0.0     	0.0

@@ -1,0 +1,47 @@
+Which procedures have the greatest variability between hospitals? 
+
+Procedures OP_3b, OP_18b, EB_2b and ED_1b have the highest variablity based on the variance and standard deviation in the table below.
+
+
+Procedure (measure id)	Average		Variance	Standard deviation		
+OP_22   		1.7     	2.96    	1.72
+STK_2   		98.9    	9.04    	3.01
+SCIP_VTE_2      	99.49   	11.4    	3.38
+SCIP_INF_3      	97.71   	15.42   	3.93
+SCIP_INF_2      	97.96   	17.63   	4.2
+SCIP_INF_9      	97.66   	21.78   	4.67
+SCIP_CARD_2     	97.43   	25.49   	5.05
+STK_5   		98.08   	25.52   	5.05
+OP_4    		96.64   	25.57   	5.06
+SCIP_INF_1      	98.13   	27.67   	5.26
+STK_3   		97.0    	28.76   	5.36
+OP_5    		8.28    	29.97   	5.48
+STK_10  		97.66   	30.38   	5.51
+VTE_4   		98.98   	30.91   	5.56
+PC_01   		3.14    	31.9    	5.65
+VTE_2   		96.25   	39.39   	6.28
+VTE_6   		3.85    	43.55   	6.6
+AMI_8a  		95.42   	49.06   	7.01
+VTE_3   		94.16   	58.69   	7.66
+STK_1   		95.91   	62.38   	7.9
+STK_6   		95.31   	65.7    	8.11
+PN_6    		94.77   	80.88   	8.99
+OP_1    		25.87   	95.65   	9.84
+AMI_7a  		77.0    	104.0   	12.49
+HF_2    		96.98   	115.04  	10.73
+IMM_2   		92.71   	134.13  	11.58
+STK_8   		92.79   	138.48  	11.77
+VTE_5   		92.06   	160.81  	12.68
+VTE_1   		91.98   	163.84  	12.8
+IMM_3_OP_27_FAC_ADHPCT  83.15   	228.36  	15.11
+CAC_3   		90.06   	232.94  	15.33
+OP_20   		27.85   	276.41  	16.63
+OP_21   		54.89   	314.7   	17.74
+OP_2    		72.48   	360.17  	19.1
+STK_4   		87.0    	374.29  	19.36
+OP_23   		69.24   	438.18  	20.94
+OP_3b   		62.16   	1570.26 	39.68
+OP_18b  		145.22  	1736.49 	41.68
+ED_2b   		101.44  	4219.36 	64.97
+ED_1b   		278.56  	10487.45        102.42
+

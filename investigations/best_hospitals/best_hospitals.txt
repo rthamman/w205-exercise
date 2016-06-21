@@ -1,0 +1,91 @@
+What hospitals are models of high-quality care? That is, which hospitals have the most consistently high scores for a variety of procedures. 
+
+Steps taken for the analysis:
+
+Step 1. Transform effective_care data
+
+1.a set score to 0 where column value is 'Not Available'
+
+1.b set score to 4 where column value is 'Very High (60,000+ patients annually)'
+
+1.c set score to 3 where column value is 'High (40,000 - 59,999 patients annually)'
+
+1.d set score to 2 where column value is 'Medium (20,000 - 39,999 patients annually)'
+
+1.c set score to 1 where column value is 'Low (0 - 19,999 patients annually)'
+
+Step 2. Create effective_care_summary for each provider
+
+Summary table contains the following aggregates:
+a. Sum of scores
+b. Number of measure counts (41 distinct measure id)
+c. Average score
+d. Normalized score - some of the hospitals have 40 measures and some less that. So, to normize the score, we are dividing the sum of score by 41
+c. variance of score
+d. sample variance of score
+
+
+Step 3. Create a hosptial aggregate table by joining hospitals and effective_care_summary
+
+Step 4. List top 10 hospitals based on normalized_score
+
+Provider Id	Hospital Name						Measure	Score     	Avg 	Normalized	Variance	Sample Variance
+									counts	Sum		Score	Score
+310002  	NEWARK BETH ISRAEL MEDICAL CENTER       		40      4135.0  	106.03  100.85		26129.67        26817.29
+330202  	KINGS COUNTY HOSPITAL CENTER    			40      4118.0  	105.59  100.43  	18935.17        19433.46
+330182  	ST FRANCIS HOSPITAL, ROSLYN     			40      4022.0  	103.13  98.09   	24421.19        25063.85
+050060  	COMMUNITY REGIONAL MEDICAL CENTER       		40      3981.0  	102.08  97.09   	19756.43        20276.34
+290046  	SPRING VALLEY HOSPITAL MEDICAL CENTER   		40      3980.0  	102.05  97.07   	21357.79        21919.84
+330141  	BROOKHAVEN MEMORIAL HOSPITAL MEDICAL CENTER     	40      3908.0  	100.21  95.31   	14949.24        15342.64
+050292  	RIVERSIDE UNIVERSITY HEALTH SYSTEM-MEDICAL CENTER       40      3804.0  	97.54   92.78   	11492.04        11794.47
+050327  	LOMA LINDA UNIVERSITY MEDICAL CENTER    		40      3798.0  	97.38   92.63   	13878.19        14243.4
+110079  	GRADY MEMORIAL HOSPITAL 				40      3796.0  	97.33   92.58   	15781.35        16196.65
+450289  	HARRIS HEALTH SYSTEM    				40      3771.0  	96.69   91.97   	13293.08        13642.9
+
+Step 5. Adding readmission count. Readmission includes death and readmission of patients post a procedure or survey. Lower the number of readmission, the better the quality of the hospital.
+
+5a. create readmission summary for each provider. This table contains the following:
+a. average score
+b. count of measure_id (14 different measures for readmission)
+
+Step 6. Select to 10 hosptials with lower readmission scores
+
+Provider Id	avg		# of measure	Normalized Hospital
+		readmission			Score
+		score
+190267  	4.4     	14      	18.75609756097561
+190261  	4.6     	14      	17.29268292682927
+150172  	4.6     	14      	2.073170731707317
+190268  	4.8     	14      	16.26829268292683
+050096  	4.8    	 	14      	12.0
+390307  	5.0     	14      	17.804878048780488
+050769  	7.0     	14      	21.75609756097561
+370222  	7.5     	14      	28.658536585365855
+330270  	7.5     	14      	26.0
+280129  	7.85    	14      	31.78048780487805
+
+
+Readmission score doesn't seem to be reliable or complete as hospitals with low score has lower readmission rate. 
+
+Conclusion:
+
+List below are the top hospitals based on the average score. A number of aggregate supports this conclusion:
+a. sum of scores (max)
+b. average score (max)
+c. normalized score (sum of scores / distinct measures - 41). There are a total of 41 measures and not all hospitals have 41 measures. so this field normalizes the score
+d. readmission score average is in a similar range for the top 10 hospitals
+
+Provider Id	Hospital Name						Measure	Score     	Avg 	Normalized	Variance	Sample Variance	Readmission Score
+									counts	Sum		Score	Score						Average
+310002  	NEWARK BETH ISRAEL MEDICAL CENTER       		40      4135.0  	106.03  100.85		26129.67        26817.29	13.79
+330202  	KINGS COUNTY HOSPITAL CENTER    			40      4118.0  	105.59  100.43  	18935.17        19433.46	15.20
+330182  	ST FRANCIS HOSPITAL, ROSLYN     			40      4022.0  	103.13  98.09   	24421.19        25063.85	11.97
+050060  	COMMUNITY REGIONAL MEDICAL CENTER       		40      3981.0  	102.08  97.09   	19756.43        20276.34	14.24
+290046  	SPRING VALLEY HOSPITAL MEDICAL CENTER   		40      3980.0  	102.05  97.07   	21357.79        21919.84	13.72
+330141  	BROOKHAVEN MEMORIAL HOSPITAL MEDICAL CENTER     	40      3908.0  	100.21  95.31   	14949.24        15342.64	14.75
+050292  	RIVERSIDE UNIVERSITY HEALTH SYSTEM-MEDICAL CENTER       40      3804.0  	97.54   92.78   	11492.04        11794.47	14.52
+050327  	LOMA LINDA UNIVERSITY MEDICAL CENTER    		40      3798.0  	97.38   92.63   	13878.19        14243.4		13.19
+110079  	GRADY MEMORIAL HOSPITAL 				40      3796.0  	97.33   92.58   	15781.35        16196.65	16.12
+450289  	HARRIS HEALTH SYSTEM    				40      3771.0  	96.69   91.97   	13293.08        13642.9		14.92
+
+
